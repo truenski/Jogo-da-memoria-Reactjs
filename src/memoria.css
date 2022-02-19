@@ -1,0 +1,77 @@
+*{margin:0;
+padding:0;
+box-sizing: border-box;}
+
+
+body{font-family: fantasy;
+display:flex;
+justify-content: center;
+align-items:center;
+height: 100vh;
+margin:40px;
+background: black;
+}
+
+
+
+/*CARD================================*/
+
+.card{
+    width: 150px;
+height: 150px;
+position:relative;
+transform-style: preserve-3d;
+transition: transform .5s; /*animação*/}
+
+.card_back, .card_front{width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+position:absolute;
+align-items:center;
+border-radius:20px;
+box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.45);
+backface-visibility: hidden; 
+/*Esconde quando está com .flip{transform:rotateY(180deg)};
+e  transform-style: preserve-3d;*/}
+
+.icon{width:100%;}
+
+.flip{transform: rotateY(180deg);}
+
+.card_front{background: white;
+transform: rotateY(180deg);}
+
+.card_back{font-size:30px;
+    font-family: fantasy;
+    background: red;
+}
+
+/*GAMEOVER=================================*/
+#gameOver{width:100%;
+    background:rgb(19, 15, 15, 0.8);
+height: 100%;
+position:absolute;
+color:white;
+font-size: 50px;
+/*display:none; muda pra flex e inicia*/
+justify-content:center;
+align-items:center;
+flex-direction:column;
+left:0;
+display:flex;
+top:0;}
+
+#restart{padding:20px;
+font-size:20px;
+background:yellow;
+border:none;
+border-radius:10px;
+margin-top:10px;}
+
+/*GAMEBOARD===================================*/
+#gameBoard{
+max-width:700px;
+display:grid;
+grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+gap:20px;}
